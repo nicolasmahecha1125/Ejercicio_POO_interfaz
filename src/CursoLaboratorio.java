@@ -1,11 +1,9 @@
-public class CursoPresencial extends Curso implements Gestionable {
-    private String horario;
-
-    public CursoPresencial(String nombreCurso, Profesor profesor, String horario) {
+public class CursoLaboratorio extends Curso implements Gestionable{
+    private String experimento;
+    public CursoLaboratorio(String nombreCurso, Profesor profesor,String experimento){
         super(nombreCurso, profesor);
-        this.horario = horario;
+        this.experimento = experimento;
     }
-
     public double calcularAsistenciaPromedio() {
         double totalAsitencia = 0;
         for (Estudiante estudiante : estudiantes) {
@@ -13,6 +11,14 @@ public class CursoPresencial extends Curso implements Gestionable {
             totalAsitencia += asistenciaDelEstudiante;
         }
         return totalAsitencia / estudiantes.size();
+    }
+    public double calcularParticipacionPromedio(){
+        double totalParticipacion = 0;
+        for (Estudiante estudiante : estudiantes){
+            double participacionDelEstudiante = 0;
+            totalParticipacion += participacionDelEstudiante;
+        }
+        return  totalParticipacion / estudiantes.size();
     }
 
     @Override
@@ -34,7 +40,3 @@ public class CursoPresencial extends Curso implements Gestionable {
         return false;
     }
 }
-
-
-
-

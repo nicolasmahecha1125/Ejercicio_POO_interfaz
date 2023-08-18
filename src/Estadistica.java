@@ -1,5 +1,5 @@
 public interface Estadistica {
-    public void calcularPromedio();
-    public void calcularMaximo();
-    public void calcularMinimo();
+    public double calcularPromedio();
+    public double calcularMaximo();
+    public double calcularMinimo();
 }

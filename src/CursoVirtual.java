@@ -1,20 +1,30 @@
-public class CursoVirtual implements Estadistica {
+public class CursoVirtual extends Curso implements Gestionable {
     private  String Plataforma;
-    private  String  nombreCurso;
-    private  String horario;
+  public CursoVirtual(String nombreCurso, Profesor profesor, String plataforma){
+      super(nombreCurso, profesor);
+      this.Plataforma = plataforma;
+  }
+  public double calcularParticipacionPromedio(){
+      double totalParticipacion = 0;
+      for (Estudiante estudiante : estudiantes){
+          double participacionDelEstudiante = 0;
+          totalParticipacion += participacionDelEstudiante;
+      }
+      return  totalParticipacion / estudiantes.size();
+  }
 
     @Override
-    public void calcularPromedio() {
-
+    public boolean inscribirEstudiante(Estudiante estudiante) {
+        estudiantes.add(estudiante);
+        return true;
     }
 
     @Override
-    public void calcularMaximo() {
-
-    }
-
-    @Override
-    public void calcularMinimo() {
-
+    public boolean retirarEstudianta(Estudiante estudiante) {
+       if(estudiantes.contains(estudiante)){
+           estudiantes.remove(estudiante);
+           return  true;
+       }
+       return false;
     }
 }

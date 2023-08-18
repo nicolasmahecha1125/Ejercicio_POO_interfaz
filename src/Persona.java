@@ -1,5 +1,5 @@
-public class Persona {
-    private String nombre;
+public abstract class Persona {
+    protected String nombre;
     private int edad;
     private  String genero;
     public Persona(String nombre,int edad,String genero){
