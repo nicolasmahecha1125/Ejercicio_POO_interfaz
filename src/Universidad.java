@@ -13,7 +13,6 @@ public class Universidad {
             System.out.println("Curso: " + curso.nombreCurso);
             System.out.println("Profesor: " + curso.profesor.nombre);
             System.out.println("Estudiantes inscritos: " + curso.estudiantes.size());
-            // Puedes agregar más detalles aquí dependiendo de tus necesidades.
             System.out.println();
         }
     }

@@ -4,6 +4,9 @@ public class Main {
         Profesor profesor1 = new Profesor("Juan Pérez", 35, "Masculino", "Licenciado en Educación");
         profesor1.agregarMateria("Matemáticas");
 
+        Profesor profesor2 = new Profesor("santiago",33,"Masculino","Ingeniero quimico");
+        profesor1.agregarMateria("Quimica");
+
         // Crear objetos de tipo Estudiante
         double[] notasEstudiante1 = {90.5, 85.2, 78.9, 92.0};
         Estudiante estudiante1 = new Estudiante("Ana García", 20, "Femenino", "2023001", notasEstudiante1);
@@ -16,10 +19,20 @@ public class Main {
         CursoVirtual cursoVirtual1 = new CursoVirtual("Introducción a la Programación", profesor1, "Plataforma Aula Virtual");
         cursoVirtual1.inscribirEstudiante(estudiante1);
 
+        // crear objetos de tipo ClaseLaboratorio
+        CursoLaboratorio cursoLaboratorio1 = new CursoLaboratorio("sintaxis quimica",profesor2,"separar compuestos");
+        cursoLaboratorio1.inscribirEstudiante(estudiante1);
+
+        //crear objetos de tipo ClaseTaller
+        CursoTaller cursoTaller1 = new CursoTaller("pedagogia",profesor2,"introduccion a la enseñanza");
+        cursoTaller1.inscribirEstudiante(estudiante1);
+
         // Crear objeto de tipo Universidad
         Universidad universidad = new Universidad();
         universidad.agregarCurso(cursoPresencial1);
         universidad.agregarCurso(cursoVirtual1);
+        universidad.agregarCurso(cursoLaboratorio1);
+        universidad.agregarCurso(cursoTaller1);
 
         // Mostrar información completa de la universidad
         universidad.mostrarInformacionCompleta();
@@ -30,6 +43,6 @@ public class Main {
 
         // Calcular y mostrar el promedio de participación para los cursos virtuales
         double promedioParticipacion = cursoVirtual1.calcularParticipacionPromedio();
-        System.out.println("Promedio");
+        System.out.println("Promedio de asistencia en el curso virtual:" + promedioParticipacion);
     }
 }
